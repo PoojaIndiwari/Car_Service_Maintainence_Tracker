@@ -1,4 +1,4 @@
-package lk.sliit.carservicemanagementgp99.projectname.servlet;
+package lk.sliit.carservicemanagementgp99.projectname;
 
 
 public class Appointments {

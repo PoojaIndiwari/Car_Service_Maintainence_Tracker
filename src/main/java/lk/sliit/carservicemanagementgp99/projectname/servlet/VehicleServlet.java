@@ -4,8 +4,8 @@ package lk.sliit.carservicemanagementgp99.projectname.servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-import lk.sliit.carservicemanagementgp99.projectname.servlet.Vehicle;
-import lk.sliit.carservicemanagementgp99.projectname.servlet.VehicleManager;
+import lk.sliit.carservicemanagementgp99.projectname.Vehicle;
+import lk.sliit.carservicemanagementgp99.projectname.VehicleManager;
 
 import java.io.IOException;
 import java.util.List;

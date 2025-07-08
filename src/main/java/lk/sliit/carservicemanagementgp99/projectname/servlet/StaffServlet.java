@@ -2,6 +2,8 @@ package lk.sliit.carservicemanagementgp99.projectname.servlet;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import lk.sliit.carservicemanagementgp99.projectname.*;
+
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -13,7 +15,7 @@ import java.util.logging.Logger;
 @WebServlet("/StaffServlet")
 public class StaffServlet extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(StaffServlet.class.getName());
-    private final lk.sliit.carservicemanagementgp99.projectname.servlet.StaffManager manager = new lk.sliit.carservicemanagementgp99.projectname.servlet.StaffManager();
+    private final StaffManager manager = new StaffManager();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -110,7 +112,7 @@ public class StaffServlet extends HttpServlet {
         }
 
 
-        lk.sliit.carservicemanagementgp99.projectname.servlet.Staff staff = createStaffInstance(id, name, role, email, phone);
+        Staff staff = createStaffInstance(id, name, role, email, phone);
         if (staff == null) {
             LOGGER.warning("Invalid staff role specified: " + role);
             return false;
@@ -135,13 +137,13 @@ public class StaffServlet extends HttpServlet {
 
     private Staff createStaffInstance(String id, String name, String role, String email, String phone) {
         return switch (role) {
-            case "Manager" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.Manager(id, name, email, phone);
-            case "Supervisor" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.Supervisor(id, name, email, phone);
-            case "Operation Head" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.OperationHead(id, name, email, phone);
+            case "Manager" -> new Manager(id, name, email, phone);
+            case "Supervisor" -> new Supervisor(id, name, email, phone);
+            case "Operation Head" -> new OperationHead(id, name, email, phone);
             case "Technician" -> new Technician(id, name, email, phone);
-            case "Engine Specialist" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.EngineSpecialist(id, name, email, phone);
-            case "Detailer" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.Detailer(id, name, email, phone);
-            case "Lot Attendant" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.LotAttendant(id, name, email, phone);
+            case "Engine Specialist" -> new EngineSpecialist(id, name, email, phone);
+            case "Detailer" -> new Detailer(id, name, email, phone);
+            case "Lot Attendant" -> new LotAttendant(id, name, email, phone);
             default -> null;
         };
     }

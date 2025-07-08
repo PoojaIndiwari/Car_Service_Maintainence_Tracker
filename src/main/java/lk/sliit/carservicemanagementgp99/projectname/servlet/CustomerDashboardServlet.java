@@ -3,10 +3,11 @@ package lk.sliit.carservicemanagementgp99.projectname.servlet;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
-import lk.sliit.carservicemanagementgp99.projectname.servlet.VehicleManager;
-import lk.sliit.carservicemanagementgp99.projectname.servlet.AppointmentManager;
+import lk.sliit.carservicemanagementgp99.projectname.AppointmentManager;
+import lk.sliit.carservicemanagementgp99.projectname.Appointments;
+import lk.sliit.carservicemanagementgp99.projectname.Vehicle;
+import lk.sliit.carservicemanagementgp99.projectname.VehicleManager;
 import lk.sliit.carservicemanagementgp99.projectname.model.User;
-import lk.sliit.carservicemanagementgp99.projectname.servlet.Vehicle;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 @WebServlet("/customerDashboard")
 public class CustomerDashboardServlet extends HttpServlet {
-    private VehicleManager   vehicleManager;
+    private VehicleManager vehicleManager;
     private AppointmentManager appointmentManager;
 
     @Override

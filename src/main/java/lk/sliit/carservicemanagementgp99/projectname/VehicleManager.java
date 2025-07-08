@@ -1,6 +1,4 @@
-package lk.sliit.carservicemanagementgp99.projectname.servlet;
-
-import lk.sliit.carservicemanagementgp99.projectname.servlet.Vehicle;
+package lk.sliit.carservicemanagementgp99.projectname;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

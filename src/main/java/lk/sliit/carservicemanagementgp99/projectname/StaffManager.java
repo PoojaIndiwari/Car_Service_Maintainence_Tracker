@@ -1,4 +1,4 @@
-package lk.sliit.carservicemanagementgp99.projectname.servlet;
+package lk.sliit.carservicemanagementgp99.projectname;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ public class StaffManager {
     private static final String STAFF_FILE = "C:\\Users\\ASUS\\Desktop\\ProjectFile\\Staff_list.txt";
     private static final String DELIMITER = ",";
 
-    private final List<lk.sliit.carservicemanagementgp99.projectname.servlet.Staff> staffList = new LinkedList<>();
+    private final List<Staff> staffList = new LinkedList<>();
 
     public StaffManager() {
         ensureFileExists();
@@ -35,18 +35,18 @@ public class StaffManager {
         }
     }
 
-    public List<lk.sliit.carservicemanagementgp99.projectname.servlet.Staff> getAllStaff() {
+    public List<Staff> getAllStaff() {
         return Collections.unmodifiableList(staffList);
     }
 
-    public lk.sliit.carservicemanagementgp99.projectname.servlet.Staff getStaffById(String id) {
+    public Staff getStaffById(String id) {
         return staffList.stream()
                 .filter(s -> s.getId().equalsIgnoreCase(id))
                 .findFirst()
                 .orElse(null);
     }
 
-    public void addStaff(lk.sliit.carservicemanagementgp99.projectname.servlet.Staff staff) {
+    public void addStaff(Staff staff) {
         if (staff != null && !existsById(staff.getId())) {
             staffList.add(staff);
             sortById();
@@ -93,7 +93,7 @@ public class StaffManager {
     private void saveStaff() {
         Path path = Paths.get(STAFF_FILE);
         try (BufferedWriter writer = Files.newBufferedWriter(path)) {
-            for (lk.sliit.carservicemanagementgp99.projectname.servlet.Staff staff : staffList) {
+            for (Staff staff : staffList) {
                 String line = String.join(DELIMITER,
                         staff.getId(),
                         staff.getFullName(),
@@ -135,7 +135,7 @@ public class StaffManager {
                 String phone = parts[5].trim();
                 String dateStr = parts.length > 6 ? parts[6].trim() : "";
 
-                lk.sliit.carservicemanagementgp99.projectname.servlet.Staff staff = createStaffInstance(id, name, role, email, phone);
+                Staff staff = createStaffInstance(id, name, role, email, phone);
                 if (staff != null) {
                     staff.setStatus(status);
                     if (!dateStr.isEmpty()) {
@@ -153,15 +153,15 @@ public class StaffManager {
         }
     }
 
-    private lk.sliit.carservicemanagementgp99.projectname.servlet.Staff createStaffInstance(String id, String name, String role, String email, String phone) {
+    private Staff createStaffInstance(String id, String name, String role, String email, String phone) {
         return switch (role) {
-            case "Manager" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.Manager(id, name, email, phone);
+            case "Manager" -> new Manager(id, name, email, phone);
             case "Supervisor" -> new Supervisor(id, name, email, phone);
-            case "Operation Head" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.OperationHead(id, name, email, phone);
+            case "Operation Head" -> new OperationHead(id, name, email, phone);
             case "Technician" -> new Technician(id, name, email, phone);
-            case "Detailer" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.Detailer(id, name, email, phone);
-            case "Lot Attendant" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.LotAttendant(id, name, email, phone);
-            case "Engine Specialist", "EngineSpecialist" -> new lk.sliit.carservicemanagementgp99.projectname.servlet.EngineSpecialist(id, name, email, phone);
+            case "Detailer" -> new Detailer(id, name, email, phone);
+            case "Lot Attendant" -> new LotAttendant(id, name, email, phone);
+            case "Engine Specialist", "EngineSpecialist" -> new EngineSpecialist(id, name, email, phone);
             default -> {
                 LOGGER.warning("Unknown staff role: " + role);
                 yield null;

@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-         version="6.0">
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <display-name>Car Service and Maintenance Tracker</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>home.jsp</welcome-file>
+        <welcome-file>vehicleManagement.jsp</welcome-file>
+        <welcome-file>staff_management.jsp</welcome-file>
+        <welcome-file>serviceAndInvoiceindex.jsp</welcome-file>
+        <welcome-file>appointmentmanagement.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserCRUDServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.servlet.UserCRUDServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserCRUDServlet</servlet-name>
+        <url-pattern>/usercrud</url-pattern>
+    </servlet-mapping>
+
+    <!-- Optional: Uncomment only if needed -->
+    <!--
+    <servlet>
+        <servlet-name>BookingServiceServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.BookingServiceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookingServiceServlet</servlet-name>
+        <url-pattern>/BookServiceServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ViewAppointmentsServlet</servlet-name>
+        <servlet-class>lk.sliit.carservicemanagementgp99.projectname.ViewAppointmentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ViewAppointmentsServlet</servlet-name>
+        <url-pattern>/ViewAppointmentsServlet</url-pattern>
+    </servlet-mapping>
+    -->
+
 </web-app>
