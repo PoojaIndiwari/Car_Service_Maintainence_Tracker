@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.util.*;
 
 public class AppointmentManager {
-    private static final String FILE_PATH = "C:\\Users\\ASUS\\Desktop\\ProjectFile\\appointment.txt";
+    private static final String FILE_PATH = "C:\\Users\\pooja\\Desktop\\appointment.txt";
 
 
     private Path getPath() throws IOException {

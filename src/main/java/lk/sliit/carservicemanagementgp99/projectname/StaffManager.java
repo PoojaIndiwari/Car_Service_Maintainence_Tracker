@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 
 public class StaffManager {
     private static final Logger LOGGER = Logger.getLogger(StaffManager.class.getName());
-    private static final String STAFF_FILE = "C:\\Users\\ASUS\\Desktop\\ProjectFile\\Staff_list.txt";
+    private static final String STAFF_FILE = "C:\\Users\\pooja\\Desktop\\staffList.txt";
     private static final String DELIMITER = ",";
 
     private final List<Staff> staffList = new LinkedList<>();

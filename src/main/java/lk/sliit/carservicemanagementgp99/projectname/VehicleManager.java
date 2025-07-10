@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 
 public class VehicleManager {
     private static final Logger LOGGER = Logger.getLogger(VehicleManager.class.getName());
-    private static final String DIRECTORY = "C:\\Users\\ASUS\\Desktop\\ProjectFile";
+    private static final String DIRECTORY = "C:\\Users\\pooja\\Desktop";
     private static final String VEHICLE_FILE = Paths.get(DIRECTORY, "vehicle_data.txt").toString();
     private static final String BACKUP_FILE  = Paths.get(DIRECTORY, "vehicle_data_backup.txt").toString();
 

@@ -11,7 +11,7 @@ import java.util.*;
 
 @WebServlet("/DeleteFeedbackServlet")
 public class DeleteFeedbackServlet extends HttpServlet {
-    private static final String FEEDBACK_FILE = "C:\\Users\\ASUS\\Desktop\\ProjectFile/feedback.txt";
+    private static final String FEEDBACK_FILE = "C:\\Users\\pooja\\Desktop\\feedback.txt";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");

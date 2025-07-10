@@ -25,8 +25,8 @@ public class ServiceServlet extends HttpServlet {
 
     public void init() throws ServletException {
         // Update these paths to your actual PC absolute file paths
-        String servicePath = "C:\\Users\\ASUS\\Desktop\\ProjectFile\\services.txt";
-        String invoicePath = "C:\\Users\\ASUS\\Desktop\\ProjectFile\\invoices.txt";
+        String servicePath = "C:\\Users\\pooja\\Desktop\\services.txt";
+        String invoicePath = "C:\\Users\\pooja\\Desktop\\invoices.txt";
 
         serviceManager = new ServiceManager(servicePath);
         invoiceManager = new InvoiceManager(invoicePath);

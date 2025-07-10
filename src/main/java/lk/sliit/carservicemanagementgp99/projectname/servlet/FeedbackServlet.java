@@ -9,7 +9,7 @@ import java.io.*;
 @WebServlet("/FeedbackServlet")
 public class FeedbackServlet extends HttpServlet {
 
-    private static final String FILE_PATH = "C:\\Users\\ASUS\\Desktop\\ProjectFile/feedback.txt";
+    private static final String FILE_PATH = "C:\\Users\\pooja\\Desktop\\feedback.txt";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name").trim();
